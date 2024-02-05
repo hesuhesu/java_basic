@@ -1,3 +1,5 @@
+package controlStatement;
+
 public class controlStatement_switch {
     public static void main (String[] args){
 
