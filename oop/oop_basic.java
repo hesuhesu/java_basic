@@ -1,3 +1,5 @@
+package oop;
+
 class Calculator1 {
     static int result = 0;
 
