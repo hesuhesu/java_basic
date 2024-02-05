@@ -1,3 +1,5 @@
+package dataType;
+
 public class dataType_bool {
     public static void main(String[] args) {
         boolean isSuccess = true;

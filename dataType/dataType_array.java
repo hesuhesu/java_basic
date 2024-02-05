@@ -1,3 +1,5 @@
+package dataType;
+
 public class dataType_array {
     public static void main (String[] args){
 
