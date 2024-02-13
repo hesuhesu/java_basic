@@ -10,38 +10,41 @@ public class IO_console {
     public static void main (String[] args) throws IOException {
 
         // InputStream
+        System.out.println("1_start----------------------------");
         InputStream in = System.in; // System.in은 InputStream 의 객체이다.
 
         int a; // InputStream 의 read 메서드는 1byte 크기의 사용자의 입력을 받아들인다.
         a = in.read(); // read 는 int 자료형으로 저장되고, 0~255 사이 정수값. 즉 아스키코드 값이다.
-
+        in.read(); // 해당 read를 하지 않으면 다음 stream에 /n 이 오바되서 다른 값이 생성됨.
         System.out.println(a);
-        System.out.println("----------------------------");
 
+        System.out.println("2_start----------------------------");
         InputStream in2 = System.in;
 
-        int a1, b1, c1; // 이런 식으로 3글자를 받아올 수 있음.
-        a1 = in.read();
-        b1 = in.read();
-        c1 = in.read();
+        int a1;
+        int b1;
+        int c1;
+        a1 = in2.read();
+        b1 = in2.read();
+        c1 = in2.read(); // 이런 식으로 3글자를 받아올 수 있음.
+        in2.read(); // 해당 read를 하지 않으면 다음 stream에 /n 이 오바되서 다른 값이 생성됨.
 
         System.out.println(a1);
         System.out.println(b1);
         System.out.println(c1);
-        System.out.println("----------------------------");
 
+        System.out.println("3_start----------------------------");
         InputStream in3 = System.in;
 
         byte[] a2 = new byte[3]; // 3글자 받기를 좀 더 간소화 가능.
-        in.read(a2);
-
+        in3.read(a2);
+        in3.read(); // 해당 read를 하지 않으면 다음 stream에 /n 이 오바되서 다른 값이 생성됨.
         System.out.println(a2[0]);
         System.out.println(a2[1]);
         System.out.println(a2[2]);
-        System.out.println("----------------------------");
 
         // InputStreamReader
-
+        System.out.println("4_start----------------------------");
         InputStream in4 = System.in;
         InputStreamReader reader = new InputStreamReader(in4);
         // InputStreamReader 는 객체를 생성할 때 생성자의 입력으로 InputStream 객체가 필요하다.
@@ -49,8 +52,8 @@ public class IO_console {
         reader.read(a3);
 
         System.out.println(a3); // 한 번에 출력된다.
-        System.out.println("----------------------------");
 
+        System.out.println("5_start----------------------------");
         InputStream in5 = System.in;
         InputStreamReader reader2 = new InputStreamReader(in5);
         // BufferedReader 의 readLine 메서드를 이용하면 사용자가 입력한 문자열 전부를 읽을 수 있게 된다.
@@ -58,8 +61,8 @@ public class IO_console {
 
         String a4 = br.readLine();
         System.out.println(a4);
-        System.out.println("----------------------------");
 
+        System.out.println("last_start----------------------------");
         Scanner sc = new Scanner(System.in);
         System.out.println(sc.next());
         // Scanner 객체의 next() 메서드는 한 개의 토큰(token)을 읽어 들인다.
