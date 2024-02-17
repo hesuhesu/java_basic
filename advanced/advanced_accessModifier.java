@@ -14,7 +14,9 @@ class test {
 
 public class advanced_accessModifier {
     public static void main (String[] args){
+
         test ts = new test();
+
         // ts.setName(); 는 접근 불가능하다. 이유는 private 접근제어자이기 때문.
         System.out.println(ts.name);
         System.out.println(ts.mention);
